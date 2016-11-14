@@ -1,0 +1,21 @@
+# Site settings
+title: Mastering the Art of Fresh Coding
+header-img: img/home-bg.png
+email: brie.coyle@gmail.com
+copyright_name: briecoyle
+description: > # this means to ignore newlines until "baseurl:"
+  A cook's guide to the wonder of programming
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: briecoyle
+github_username:  briecoyle
+learn_profile: briecoyle
+email_username: brie.coyle@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
