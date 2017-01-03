@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Object Orientation: A Debriefing"
+date:   2017-01-03 21:51:04 +0000
+---
+
+
+When I first started my foray into development, I played around with many a coding app. They all started out with the same basics -- variables, methods, #puts and #print, etc. For those that were specifically targeted towards Ruby, there was always this caveat that read something along the lines of "Now, remember everything in Ruby is an object," but this was quickly followed by a hand-waving "Don't worry about this now." For a while, I wasn't worried about it. Then, I ran into classes.
+
+Up unto this point, I was pretty comfortable with the material. With a background in math and sciences, I had already trained my brain to think about implicit return values and to recognize that variables have both names and a values. With the introduction of classes, scope of variables and methods started to really matter. I struggled with this concept, especially with the introduction of new syntax for different variable types, but I eventually came to some important conclusions.
+
+## Essentially, it's a Venn diagram.
+There are four main types of variables: local, instance, class, and global. Each of these is defined with a different symbol before the variable name. A local variable does not require a symbol and only belongs to the method in which it is defined. An instance variable will be preceded with "@," whereas a class variable will be preceded with "@@." Instance variables belong to the specific version of the class that is created during initialization, but class variables can be accessed by both instances and the class itself. I started to think of an instance as a small bubble with "@" variables inside of it. Each instance belonged inside of a big bubble with "@@" variables inside of it too. Global variables are designated with "$" and are dangerous because they do not follow the rules of inheritance. They can cross the borders of the Venn diagram and cause all kinds of trouble.
+
+<iframe src="//giphy.com/embed/8dFO5uj68T8pa" width="480" height="296" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/8dFO5uj68T8pa">via GIPHY</a></p>
+
+## When in doubt, limit your scope.
+Creating variables with a wide scope can cause problems. If you can imagine that different instances of an object would need to have different values for the same variable, it should be an instance variable. For example, if I was creating a class to represent each house in my neighborhood, I would want each house to have a list of people in the house, an integer representing how many people lived in the house, and a boolean representing whether the house has a pet or not. Now, what if I wanted to count the number of houses in the neighborhood? I wouldn't make that the responsibility of the house. That would be the responsibility of the neighborhood, or essentially the class that holds the instances of houses. Now, I can just check in with the neighborhood and ask it to keep count of how many houses it has with a class variable.  However, I would not want the neighborhood to keep track of whether each house has a pet. That is the responsibility of the house. Keeping variables assigned to the smallest scope makes sure that there is not excessive reassignment of variables, and keeps information in cute little Venn diagram packets that can be properly distributed.
+
+## Look into Modules.
+When I was first introduced to modules, my mind was totally blown. You mean, a module is an object, but can pass information to other objects, so that they can inherit the same methods and variables?? I loved it. I definitely felt the wormhole of inception creeping up on me, but I just had to embrace the veritable infinity mirror of objection orientation. If you have several classes that need to have some of the same behavior, it is lovely to be able to pull that behavior out into a separate module, and then have multiple classes inherit from that module. That way, if you have to make a change to one of those behaviors, you can make the change in one place, but exhibit the change throughout the code. Additionally, if you add new unique classes that need to use the same behavior, you can just add them to the list of classes that inherit from that module.
