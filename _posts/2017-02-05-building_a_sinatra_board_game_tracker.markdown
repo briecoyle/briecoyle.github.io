@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Building a Sinatra Board Game Tracker"
-date:   2017-02-05 21:46:14 +0000
+date:   2017-02-05 16:46:15 -0500
 ---
 
 
@@ -21,12 +21,14 @@ Almost. I would have to find some way to manipulate the data I was creating to t
 ## Making Something that Looks Like Something!
 I had finally reached a point where I could start to write code that would "actually show up" on a web page. I recognized that all of my hardwork to just set up my basic framework had paid off when I decided to write:
 
-> `get '/' do
-> "Hello World"
-> end`
+```
+get '/' do
+"Hello World"
+end
+ ```
 
 in my Application Controller. I ran shotgun from my terminal, made my way to the IP address provided and there it was. Plain as day. Hello World plasted across my screen. It's hard to quantify that feeling. Maybe I'll dedicate another post to the revelations of actually finding my passion in life. Let's stick to the technicalities here, shall we?
 
 At this point, I was maybe sadly truly proud of myself for just confirming that my browser would respond to this most basic request instead of linking to a new view right away. It's a good thing I did because when I added an index page to the view directory and linked to it in the get '/' request, and ran shotgun... nada. It took a solid half-hour to realize that I had never specified this message as HTML in the view.erb file. But eventually, I realized my mistake, patted myself on the back for general stick-with-it-ness and started to add the fun stuff.
 
-#### To Be Continued.
+##### To Be Continued.
