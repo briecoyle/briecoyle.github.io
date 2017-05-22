@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  I read something, and you should too
-date:   2017-05-22 23:35:44 +0000
+title:  I read something, and you should too.
+date:   2017-05-22 19:35:45 -0400
 ---
 
 
